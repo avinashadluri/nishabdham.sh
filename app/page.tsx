@@ -28,14 +28,13 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import Comments from "@/components/comments";
 
 export default function Home() {
   const features = [
     {
       title: "ఆలోచనలు",
       description: "నా మనసులోని ఆలోచనలు మరియు అనుభవాలు.",
-      icon: <Brain className="h-6 w-6" />,
+      icon: <Brain className="h-6 w-6 text-gray-900" />,
       gradient: "from-blue-500 to-cyan-400",
       path: "/alochanalu",
     },
@@ -106,6 +105,13 @@ export default function Home() {
                   నా ఆలోచనల ప్రపంచం
                 </span>
               </h1>
+
+              <blockquote className="max-w-3xl mx-auto mt-8">
+                <p className="text-2xl font-medium text-gray-900 mb-4">
+                  &ldquo;మౌనంలో దాగిన అర్థం, శబ్దంలో దాగిన నిశ్శబ్దం - ఇదే నా
+                  రచనల ప్రత్యేకత&rdquo;
+                </p>
+              </blockquote>
               <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto mt-4">
                 నాలోని నిశ్శబ్దం, చెవికి వినిపించని శబ్దం, అనేక ఆలోచనల సముద్రం.
                 నా మనసులో మెదిలే భావాల అక్షరీకరణ, సమాజంపై విశ్లేషణలు. హృదయం
@@ -121,7 +127,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-20 bg-gray-100">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">
               నా రచనల ప్రపంచం
@@ -168,11 +174,17 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="py-20 bg-gray-100 shadow-lg">
+        <section className="py-20 bg-gray-50 shadow-lg">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">
               ఆలోచనా ప్రవాహాలు
             </h2>
+            <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-12 text-center">
+              <p>
+                ప్రతి ఆలోచనా ధోరణి మన అవగాహనను విస్తృతం చేస్తుంది. వివిధ కోణాల
+                నుండి విషయాలను అర్థం చేసుకోవడం ద్వారా మన దృక్పథం సమగ్రమవుతుంది.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -288,21 +300,21 @@ export default function Home() {
                 </ul>
               </motion.div>
             </div>
-
-            <div className="mt-12 text-center">
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                ప్రతి ఆలోచనా ధోరణి మన అవగాహనను విస్తృతం చేస్తుంది. వివిధ కోణాల
-                నుండి విషయాలను అర్థం చేసుకోవడం ద్వారా మన దృక్పథం సమగ్రమవుతుంది.
-              </p>
-            </div>
           </div>
         </section>
 
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-gray-100">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-center mb-12">
               సాహిత్య ప్రేరణ కోసం కొన్ని మధుర వాక్యాలు...
             </h2>
+            <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-12 text-center">
+              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
+                రచన అనేది మన మనసు నుండి ప్రవహించే భావధార. అక్షరాల ద్వారా మన
+                అనుభూతులు అనంతకాలం జీవించగలవు. ప్రతి పదం వెనుక ఒక కథ, ప్రతి
+                వాక్యం వెనుక ఒక అనుభవం దాగి ఉంటుంది.
+              </p>
+            </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -411,55 +423,85 @@ export default function Home() {
                 <div className="text-sm text-gray-500">- తులసి దళం</div>
               </motion.div>
             </div>
-
-            <div className="mt-12 text-center">
-              <p className="text-lg text-gray-700 max-w-2xl mx-auto">
-                రచన అనేది మన మనసు నుండి ప్రవహించే భావధార. అక్షరాల ద్వారా మన
-                అనుభూతులు అనంతకాలం జీవించగలవు. ప్రతి పదం వెనుక ఒక కథ, ప్రతి
-                వాక్యం వెనుక ఒక అనుభవం దాగి ఉంటుంది.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 bg-gray-100">
-          <div className="container mx-auto px-4 text-center">
-            <blockquote className="max-w-3xl mx-auto">
-              <p className="text-2xl font-medium text-gray-900 mb-4">
-                &ldquo;మౌనంలో దాగిన అర్థం, శబ్దంలో దాగిన నిశ్శబ్దం - ఇదే నా రచనల
-                ప్రత్యేకత&rdquo;
-              </p>
-              <footer className="text-gray-600">— నిశ్శబ్దం</footer>
-            </blockquote>
           </div>
         </section>
       </main>
 
-      <section className="py-20 bg-white w-full">
-        <div className="w-full">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-4">అభిప్రాయాలు</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              మీ అభిప్రాయాలు మరియు సూచనలు మాకు చాలా విలువైనవి. మీ ఆలోచనలను మాతో
-              పంచుకోండి.
-            </p>
-            <div className="mt-2">
-              <a
-                href="mailto:nishabdham.sh@gmail.com"
-                className="text-blue-600 hover:text-blue-800 transition-colors"
-              >
-                ఈమెయిల్ ద్వారా సంప్రదించండి (nishabdham.sh@gmail.com)
-              </a>
-
-              <div className="my-2 text-gray-500">లేదా</div>
-              <p className="text-gray-600">క్రింది ఫారమ్ ని నింపి పంపండి</p>
+      <footer className="bg-gray-100 text-gray-600 py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                నిశ్శబ్దం
+              </h3>
+              <p className="text-sm">
+                తెలుగు సాహిత్యం, కవిత్వం, కథలు మరియు ఆలోచనల ప్రపంచానికి స్వాగతం
+              </p>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                సంప్రదించండి
+              </h3>
+              <p className="text-sm mb-2">
+                <a
+                  href="mailto:nishabdham.sh@gmail.com"
+                  className="hover:text-gray-900"
+                >
+                  nishabdham.sh@gmail.com
+                </a>
+              </p>
+              <div className="flex flex-col space-y-2">
+                <Link href="/comments" className="text-sm hover:text-gray-900">
+                  Comments
+                </Link>
+                <div className="flex space-x-4 mt-2">
+                  <a
+                    href="https://instagram.com/nishabdham.sh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-gray-900"
+                  >
+                    Instagram
+                  </a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61571755285332"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-gray-900"
+                  >
+                    Facebook
+                  </a>
+                  <a
+                    href="https://x.com/nishabdham_sh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-gray-900"
+                  >
+                    X
+                  </a>
+                  <a
+                    href="https://www.threads.net/@nishabdham.sh"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-gray-600 hover:text-gray-900"
+                  >
+                    Threads
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-xl font-semibold mb-4 text-gray-900">
+                కాపీరైట్
+              </h3>
+              <p className="text-sm">
+                © {new Date().getFullYear()} నిశ్శబ్దం. అన్ని హక్కులు
+                రక్షించబడ్డాయి.
+              </p>
             </div>
           </div>
-          <div className="bg-white rounded-2xl   p-8 w-full">
-            <Comments />
-          </div>
         </div>
-      </section>
+      </footer>
     </div>
   );
 }

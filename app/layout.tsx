@@ -33,7 +33,7 @@ export default function RootLayout({
               </div>
 
               <nav className="flex items-center space-x-6">
-                <div className="hidden md:flex space-x-6">
+                <div className="flex space-x-6">
                   <Link
                     href="/comments"
                     className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
