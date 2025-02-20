@@ -18,6 +18,11 @@ const themeConfig = {
       </div>
     ),
   },
+  useNextSeoProps() {
+    return {
+      titleTemplate: "%s",
+    };
+  },
 };
 
 export default themeConfig;
