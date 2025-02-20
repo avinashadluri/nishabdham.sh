@@ -112,10 +112,10 @@ export default function Home() {
             <nav className="flex items-center space-x-6">
               <div className="hidden md:flex space-x-6">
                 <Link
-                  href="/nenu"
+                  href={`mailto:nishabdham.sh@gmail.com?subject=Feedback - ${new Date().toLocaleDateString()}`}
                   className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
                 >
-                  నా గురించి
+                  స్పందన
                 </Link>
               </div>
             </nav>
@@ -144,11 +144,59 @@ export default function Home() {
                 కథనాలు, సామాజిక స్పృహతో కూడిన రచనలు.
               </p>
               <Button size="lg" asChild className="mr-4">
-                <Link href="/nenu">
+                <Link href="/parichayam">
                   మరింత తెలుసుకోండి <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </Button>
             </motion.div>
+          </div>
+        </section>
+
+        <section className="py-20 bg-white">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl font-bold text-center mb-12">
+              నా రచనల ప్రపంచం
+            </h2>
+            <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-12 text-center">
+              నా రచనల ప్రపంచంలోకి స్వాగతం. ఇక్కడ మీరు నా కవితలు, కథలు, వ్యాసాలు
+              మరియు అనువాదాలను చదవవచ్చు. ప్రతి రచన వెనుక ఒక అనుభవం, ఒక ఆలోచన,
+              మరియు హృదయపూర్వక భావన ఉంటుంది. ఈ సాహిత్య ప్రయాణంలో నాతో కలిసి
+              నడవండి.
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {features.map((feature, index) => (
+                <Link href={`${feature.path}`} key={feature.path}>
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ y: -5 }}
+                    className="group"
+                  >
+                    <Card className="relative overflow-hidden border-0 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
+                      <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
+                      <CardHeader className="relative z-10">
+                        <div className="flex items-center gap-4">
+                          <div
+                            className={`p-3 rounded-lg bg-gradient-to-br ${feature.gradient} w-fit`}
+                          >
+                            <div className="text-white">{feature.icon}</div>
+                          </div>
+                          <CardTitle className="text-xl font-semibold">
+                            {feature.title}
+                          </CardTitle>
+                        </div>
+                      </CardHeader>
+                      <CardContent>
+                        <CardDescription className="text-sm text-gray-600 leading-relaxed">
+                          {feature.description}
+                        </CardDescription>
+                      </CardContent>
+                    </Card>
+                  </motion.div>
+                </Link>
+              ))}
+            </div>
           </div>
         </section>
         <section className="py-20 bg-gray-100 shadow-lg">
@@ -405,55 +453,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
-          <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              నా రచనల ప్రపంచం
-            </h2>
-            <div className="text-lg text-gray-700 max-w-3xl mx-auto mb-12 text-center">
-              నా రచనల ప్రపంచంలోకి స్వాగతం. ఇక్కడ మీరు నా కవితలు, కథలు, వ్యాసాలు
-              మరియు అనువాదాలను చదవవచ్చు. ప్రతి రచన వెనుక ఒక అనుభవం, ఒక ఆలోచన,
-              మరియు హృదయపూర్వక భావన ఉంటుంది. ఈ సాహిత్య ప్రయాణంలో నాతో కలిసి
-              నడవండి.
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {features.map((feature, index) => (
-                <Link href={`${feature.path}`} key={feature.path}>
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ y: -5 }}
-                    className="group"
-                  >
-                    <Card className="relative overflow-hidden border-0 bg-white shadow-lg transition-all duration-300 hover:shadow-xl">
-                      <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-5 transition-opacity duration-300" />
-                      <CardHeader className="relative z-10">
-                        <div className="flex items-center gap-4">
-                          <div
-                            className={`p-3 rounded-lg bg-gradient-to-br ${feature.gradient} w-fit`}
-                          >
-                            <div className="text-white">{feature.icon}</div>
-                          </div>
-                          <CardTitle className="text-xl font-semibold">
-                            {feature.title}
-                          </CardTitle>
-                        </div>
-                      </CardHeader>
-                      <CardContent>
-                        <CardDescription className="text-sm text-gray-600 leading-relaxed">
-                          {feature.description}
-                        </CardDescription>
-                      </CardContent>
-                    </Card>
-                  </motion.div>
-                </Link>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        <section className="py-20 bg-gray-50">
+        <section className="py-20 bg-white-50">
           <div className="container mx-auto px-4 text-center">
             <blockquote className="max-w-3xl mx-auto">
               <p className="text-2xl font-medium text-gray-900 mb-4">
