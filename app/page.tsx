@@ -28,6 +28,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { Comments } from "./comments/page";
 
 export default function Home() {
   const features = [
@@ -91,38 +92,6 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <motion.header
-        initial={{ y: -100 }}
-        animate={{ y: 0 }}
-        className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200"
-      >
-        <div className="container mx-auto px-4">
-          <div className="flex h-16 items-center justify-between">
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              className="flex items-center space-x-2"
-            >
-              <Link href="/" className="flex items-center">
-                <span className="font-bold text-xl text-gray-900">
-                  నిశ్శబ్దం
-                </span>
-              </Link>
-            </motion.div>
-
-            <nav className="flex items-center space-x-6">
-              <div className="hidden md:flex space-x-6">
-                <Link
-                  href={`mailto:nishabdham.sh@gmail.com?subject=Feedback - ${new Date().toLocaleDateString()}`}
-                  className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
-                >
-                  స్పందన
-                </Link>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </motion.header>
-
       <main className="flex-grow pt-16">
         <section className="py-20 md:py-32 bg-gradient-to-b from-white to-gray-50">
           <div className="container mx-auto px-4 text-center">
@@ -453,7 +422,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-20 bg-white-50">
+        <section className="py-20 bg-gray-100">
           <div className="container mx-auto px-4 text-center">
             <blockquote className="max-w-3xl mx-auto">
               <p className="text-2xl font-medium text-gray-900 mb-4">
@@ -466,24 +435,31 @@ export default function Home() {
         </section>
       </main>
 
-      <footer className="border-t py-12 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <span className="font-bold text-xl">నిశ్శబ్దం</span>
-            </div>
-            <div className="flex items-center space-x-4">
+      <section className="py-20 bg-white w-full">
+        <div className="w-full">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold mb-4">అభిప్రాయాలు</h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              మీ అభిప్రాయాలు మరియు సూచనలు మాకు చాలా విలువైనవి. మీ ఆలోచనలను మాతో
+              పంచుకోండి.
+            </p>
+            <div className="mt-2">
               <a
                 href="mailto:nishabdham.sh@gmail.com"
-                className="text-sm text-gray-600 hover:text-gray-900 transition-colors"
+                className="text-blue-600 hover:text-blue-800 transition-colors"
               >
-                nishabdham.sh@gmail.com
+                ఈమెయిల్ ద్వారా సంప్రదించండి (nishabdham.sh@gmail.com)
               </a>
-              <div className="text-sm text-gray-600">© 2025 నిశ్శబ్దం.</div>
+
+              <div className="my-2 text-gray-500">లేదా</div>
+              <p className="text-gray-600">క్రింది ఫారమ్ ని నింపి పంపండి</p>
             </div>
           </div>
+          <div className="bg-white rounded-2xl   p-8 w-full">
+            <Comments />
+          </div>
         </div>
-      </footer>
+      </section>
     </div>
   );
 }

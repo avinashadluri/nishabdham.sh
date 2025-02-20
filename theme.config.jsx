@@ -12,11 +12,8 @@ const themeConfig = {
   navbar: {
     extraContent: (
       <div className="flex gap-4">
-        <a
-          href="mailto:nishabdham.sh@gmail.com"
-          className="hover:text-blue-500 transition-colors"
-        >
-          స్పందన
+        <a href="/comments" className="hover:text-blue-500 transition-colors">
+          అభిప్రాయాలు
         </a>
       </div>
     ),
