@@ -28,7 +28,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Comments } from "./comments/page";
+import Comments from "@/components/comments";
 
 export default function Home() {
   const features = [
