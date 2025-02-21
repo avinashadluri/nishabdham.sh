@@ -1,11 +1,14 @@
 {
   "index": {
-    "title": "పరిచయం"
+    "title": "పరిచయం",
+    "display": "page"
   },
   "emotions": {
-    "title": "భావావేశాలు"
+    "title": "భావావేశాలు",
+    "display": "page"
   },
   "kids": {
-    "title": "పిల్లల కథలు"
+    "title": "పిల్లల కథలు",
+    "type": "folder"
   }
 }
