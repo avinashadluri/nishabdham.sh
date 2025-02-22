@@ -1,3 +1,6 @@
+"use client"
+
+import { useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import heroImage from "@/public/images/hero.png"
@@ -227,6 +230,24 @@ const motivation = [
 ]
 
 export default function Home() {
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("/service-worker.js").then(
+          (registration) => {
+            console.log(
+              "Service Worker registered with scope:",
+              registration.scope
+            )
+          },
+          (error) => {
+            console.error("Service Worker registration failed:", error)
+          }
+        )
+      })
+    }
+  }, [])
+
   return (
     <div className="min-h-[86.5vh] flex flex-col justify-center items-center text-center">
       <section className="p-2">
