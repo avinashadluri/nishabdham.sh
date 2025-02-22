@@ -1,54 +1,75 @@
-import "./globals.css";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import Link from "next/link";
-import { motion } from "framer-motion";
+import type { Metadata } from "next"
+import { GoogleTagManager } from "@next/third-parties/google"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import { GeistMono } from "geist/font/mono"
+import { GeistSans } from "geist/font/sans"
 
-const inter = Inter({ subsets: ["latin"] });
+import { Settings } from "@/lib/meta"
+import { Footer } from "@/components/navigation/footer"
+import { Navbar } from "@/components/navigation/navbar"
+import { ThemeProvider } from "@/components/theme-provider"
+
+import "./globals.css"
+
+const baseUrl = Settings.metadataBase
 
 export const metadata: Metadata = {
-  title: "నిశ్శబ్దం",
-  description: "నాలోని నిశ్శబ్దం, చెవికి వినిపించని శబ్దం, అనేక ఆలోచనల సముద్రం",
-};
+  title: Settings.title,
+  metadataBase: new URL(baseUrl),
+  description: Settings.description,
+  keywords: Settings.keywords,
+  openGraph: {
+    type: Settings.openGraph.type,
+    url: baseUrl,
+    title: Settings.openGraph.title,
+    description: Settings.openGraph.description,
+    siteName: Settings.openGraph.siteName,
+    images: Settings.openGraph.images.map((image) => ({
+      ...image,
+      url: `${baseUrl}${image.url}`,
+    })),
+  },
+  twitter: {
+    card: Settings.twitter.card,
+    title: Settings.twitter.title,
+    description: Settings.twitter.description,
+    site: Settings.twitter.site,
+    images: Settings.twitter.images.map((image) => ({
+      ...image,
+      url: `${baseUrl}${image.url}`,
+    })),
+  },
+  alternates: {
+    canonical: baseUrl,
+  },
+}
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <header className="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-200">
-          <div className="container mx-auto px-4">
-            <div className="flex h-16 items-center justify-between">
-              <div className="flex items-center space-x-2">
-                <Link href="/" className="flex items-center">
-                  <span className="font-bold text-xl text-gray-900">
-                    నిశ్శబ్దం
-                  </span>
-                </Link>
-              </div>
-
-              <nav className="flex items-center space-x-6">
-                <div className="flex space-x-6">
-                  <Link
-                    href="/comments"
-                    className="text-sm font-medium text-gray-700 hover:text-gray-900 transition-colors"
-                  >
-                    అభిప్రాయాలు
-                  </Link>
-                </div>
-              </nav>
-            </div>
-          </div>
-        </header>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      {Settings.gtmconnected && <GoogleTagManager gtmId={Settings.gtm} />}
+      <body
+        className={`${GeistSans.variable} ${GeistMono.variable} font-regular`}
+        suppressHydrationWarning
+      >
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Navbar />
+          <main className="h-auto">{children}</main>
+          <Footer />
+        </ThemeProvider>
         <SpeedInsights />
         <Analytics />
       </body>
     </html>
-  );
+  )
 }

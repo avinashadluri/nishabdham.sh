@@ -35,13 +35,21 @@ export default function Comments({ height = 800 }: { height?: number }) {
       `;
     document.head.appendChild(nicknameTrans);
 
+    // Update Cusdis attributes with window location
+    const cusdisThread = document.getElementById('cusdis_thread');
+    if (cusdisThread) {
+      cusdisThread.setAttribute('data-page-id', window.location.pathname);
+      cusdisThread.setAttribute('data-page-url', window.location.pathname);
+      cusdisThread.setAttribute('data-page-title', window.location.pathname);
+    }
+
     // Cleanup on unmount
     return () => {
       document.body.removeChild(script);
       document.head.removeChild(style);
       document.head.removeChild(nicknameTrans);
     };
-  }, []);
+  }, [height]);
 
   return (
     <div className="bg-white">
@@ -49,15 +57,6 @@ export default function Comments({ height = 800 }: { height?: number }) {
         id="cusdis_thread"
         data-host="https://cusdis.com"
         data-app-id="7ecbb2a4-4ea6-4772-a66c-48409b5900fb"
-        data-page-id={
-          typeof window !== "undefined" ? window.location.pathname : ""
-        }
-        data-page-url={
-          typeof window !== "undefined" ? window.location.pathname : ""
-        }
-        data-page-title={
-          typeof window !== "undefined" ? window.location.pathname : ""
-        }
         className="prose max-w-none min-h-[800px]"
         style={{
           ["--cusdis-comment-box-height" as string]: "200px",
