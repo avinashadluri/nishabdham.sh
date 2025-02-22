@@ -37,7 +37,7 @@ export default function Search() {
         setIsLoading(true)
         const results: SetStateAction<search[]> = []
         setFilteredResults(results)
-        setIsLoading(false)
+        setIsLoading(input.length > 0)
       }, 200),
     []
   )
