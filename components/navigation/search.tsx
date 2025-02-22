@@ -1,10 +1,10 @@
 "use client"
 
-import { useEffect, useMemo, useState } from "react"
+import { SetStateAction, useEffect, useMemo, useState } from "react"
 import { Documents } from "@/settings/documents"
 import { LuCommand, LuFileText, LuSearch } from "react-icons/lu"
 
-import { advanceSearch, cn, debounce, highlight, search } from "@/lib/utils"
+import { cn, debounce, highlight, search } from "@/lib/utils"
 import {
   Dialog,
   DialogClose,
@@ -35,7 +35,7 @@ export default function Search() {
     () =>
       debounce((input) => {
         setIsLoading(true)
-        const results = advanceSearch(input.trim())
+        const results: SetStateAction<search[]> = []
         setFilteredResults(results)
         setIsLoading(false)
       }, 200),
