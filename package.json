@@ -4,7 +4,7 @@
   "private": false,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export && workbox generateSW",
+    "build": "next build",
     "start": "next start",
     "lint": "npx eslint .",
     "lint:fix": "npx eslint . --fix",
