@@ -23,9 +23,7 @@ export function Navbar() {
           </div>
         </div>
 
-        <div className="flex items-center gap-2">
-          <ModeToggle />
-        </div>
+        <div className="flex items-center gap-2">{/* <ModeToggle /> */}</div>
       </div>
     </nav>
   )
