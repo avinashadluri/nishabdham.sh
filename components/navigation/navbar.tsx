@@ -5,7 +5,6 @@ import { SheetClose } from "@/components/ui/sheet"
 import Anchor from "@/components/navigation/anchor"
 import { Logo } from "@/components/navigation/logo"
 import { SheetLeft } from "@/components/navigation/sidebar"
-import { ModeToggle } from "@/components/navigation/theme-toggle"
 
 export function Navbar() {
   return (
