@@ -229,6 +229,166 @@ const motivation = [
   },
 ]
 
+// Hero Section Component
+const HeroSection = () => {
+  return (
+    <section className="p-2">
+      <h1 className="text-4xl font-bold mb-4 sm:text-7xl flex flex-col items-center gap-2">
+        <Image
+          src={heroImage}
+          alt="Hero image"
+          width={200}
+          height={200}
+          className="rounded-full mb-2 glow-[#FFD700]"
+          priority
+        />
+        <span className="text-gray-800 -mt-12 bg-clip-text py-[2px] leading-relaxed">
+          నా ఆలోచనల ప్రపంచం
+        </span>
+      </h1>
+      <p className="max-w-[800px] text-gray-800 mb-4 italic text-base sm:text-lg md:text-xl">
+        &quot;నిశ్శబ్దం నుండి జన్మించే ఆలోచన, ఆలోచన నుండి పుట్టే అక్షరం - ఇదే నా
+        రచనా ప్రస్థానం&quot;
+      </p>
+      <p className="max-w-[800px] text-gray-700 mb-8 text-sm sm:text-base md:text-lg">
+        నా మనసులో దాగిన భావాలు, నా ఆలోచనల ప్రవాహం. నా అనుభూతులు, కల్పనలు, కవితలు
+        మరియు కథనాలు. సమాజం పట్ల నా దృక్పథం, నా హృదయం నుండి జాలువారే రచనలు.
+      </p>
+      <div className="flex items-center justify-center gap-5 mb-8">
+        <Link
+          href={`/docs${PageRoutes[0].href}`}
+          className={buttonVariants({
+            className: "px-8 py-3 bg-black text-white hover:bg-gray-800",
+            size: "lg",
+          })}
+        >
+          మరింత తెలుసుకోండి →
+        </Link>
+      </div>
+    </section>
+  )
+}
+
+// Features Section Component
+const FeaturesSection = () => {
+  return (
+    <section className="p-10">
+      <div className="w-full">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          నా రచనల ప్రపంచం
+        </h2>
+        <div className="text-lg text-gray-700 w-full mb-12 text-center">
+          నా రచనల ప్రపంచానికి స్వాగతం. ఇక్కడ నేను రాసిన కవితలు, కథలు చదవొచ్చు.
+          నా రచనలన్నీ నా అనుభవాలతో, నా మనసులోని భావాలతో రాశాను. చదివి
+          ఆనందించండి.
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {features.map((feature, index) => (
+            <Link href={feature.path} key={index}>
+              <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow hover:scale-[1.03] active:scale-[0.98]">
+                <div className="flex flex-col items-center text-center">
+                  <div className="flex items-center gap-2 mb-2">
+                    {feature.icon}
+                    <h3 className="text-xl font-semibold text-gray-900">
+                      {feature.title}
+                    </h3>
+                  </div>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Thoughts Section Component
+const ThoughtsSection = () => {
+  return (
+    <section className="p-10">
+      <div className="w-full">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          ఆలోచనా ప్రవాహాలు
+        </h2>
+        <div className="text-lg text-gray-700 w-full mb-12 text-center">
+          ప్రతి ఆలోచనా ధోరణి మన అవగాహనను విస్తృతం చేస్తుంది. వివిధ కోణాల నుండి
+          విషయాలను అర్థం చేసుకోవడం ద్వారా మన దృక్పథం సమగ్రమవుతుంది.
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {thoughts.map((thought, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all"
+            >
+              <div className="flex flex-col gap-4">
+                <div className="flex items-center gap-2">
+                  {thought.icon}
+                  <h3 className="text-xl font-semibold text-gray-800">
+                    {thought.title}
+                  </h3>
+                </div>
+                <ul className="list-disc space-y-2 text-left pl-4">
+                  {thought.thoughts.map((item, itemIndex) => (
+                    <li key={itemIndex} className="text-gray-600 text-left">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// Motivation Section Component
+const MotivationSection = () => {
+  return (
+    <section className="p-10">
+      <div className="w-full">
+        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+          సాహిత్య ప్రేరణ
+        </h2>
+        <div className="text-lg text-gray-700 w-full mb-12 text-center">
+          రచన అనేది మన మనసు నుండి ప్రవహించే భావధార. అక్షరాల ద్వారా మన అనుభూతులు
+          అనంతకాలం జీవించగలవు. ప్రతి పదం వెనుక ఒక కథ, ప్రతి వాక్యం వెనుక ఒక
+          అనుభవం దాగి ఉంటుంది.
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {motivation.map((item, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-200"
+          >
+            <div className="flex flex-col gap-4">
+              <div className="flex items-center gap-2">
+                {item.icon}
+                <h3 className="text-xl font-semibold text-gray-800">
+                  {item.title}
+                </h3>
+              </div>
+              <blockquote className="border-l-4 border-gray-200 pl-4 italic">
+                <p className="text-gray-600 mb-2">{item.quote}</p>
+                <footer className="text-sm text-gray-500">
+                  — {item.author}
+                </footer>
+              </blockquote>
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 export default function Home() {
   useEffect(() => {
     if ("serviceWorker" in navigator) {
@@ -249,151 +409,11 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="min-h-[86.5vh] flex flex-col justify-center items-center text-center">
-      <section className="p-2">
-        <h1 className="text-4xl font-bold mb-4 sm:text-7xl flex flex-col items-center gap-2">
-          {/* <span className="text-black">నిశ్శబ్దం</span> */}
-          <Image
-            src={heroImage}
-            alt="Hero image"
-            width={200}
-            height={200}
-            className="rounded-full mb-2 glow-[#FFD700]"
-            priority
-          />
-          <span className="text-gray-600 -mt-12 bg-gradient-to-r from-slate-800 to-slate-600 bg-clip-text text-transparent py-[2px] leading-relaxed">
-            నా ఆలోచనల ప్రపంచం
-          </span>
-        </h1>
-        <p className="max-w-[800px] text-foreground mb-4 italic text-base sm:text-lg md:text-xl">
-          &quot;నిశ్శబ్దం నుండి జన్మించే ఆలోచన, ఆలోచన నుండి పుట్టే అక్షరం - ఇదే
-          నా రచనా ప్రస్థానం&quot;
-        </p>
-        <p className="max-w-[800px] text-foreground mb-8 text-gray-600 text-sm sm:text-base md:text-lg">
-          నా మనసులో దాగిన భావాలు, నా ఆలోచనల ప్రవాహం. నా అనుభూతులు, కల్పనలు,
-          కవితలు మరియు కథనాలు. సమాజం పట్ల నా దృక్పథం, నా హృదయం నుండి జాలువారే
-          రచనలు.
-        </p>
-        <div className="flex items-center justify-center gap-5 mb-8">
-          <Link
-            href={`/docs${PageRoutes[0].href}`}
-            className={buttonVariants({
-              className: "px-8 py-3 bg-black text-white hover:bg-gray-800",
-              size: "lg",
-            })}
-          >
-            మరింత తెలుసుకోండి →
-          </Link>
-        </div>
-      </section>
-
-      <section className="p-10 bg-gray-100">
-        <div className="w-full">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            నా రచనల ప్రపంచం
-          </h2>
-          <div className="text-lg text-gray-700 w-full mb-12 text-center">
-            నా రచనల ప్రపంచానికి స్వాగతం. ఇక్కడ నేను రాసిన కవితలు, కథలు చదవొచ్చు.
-            నా రచనలన్నీ నా అనుభవాలతో, నా మనసులోని భావాలతో రాశాను. చదివి
-            ఆనందించండి.
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {features.map((feature, index) => (
-              <Link href={feature.path} key={index}>
-                <div className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow hover:scale-[1.03] active:scale-[0.98]">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="flex items-center gap-2 mb-2">
-                      {feature.icon}
-                      <h3 className="text-xl font-semibold text-gray-900">
-                        {feature.title}
-                      </h3>
-                    </div>
-                    <p className="text-gray-600 text-sm">
-                      {feature.description}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="p-10 bg-gray-50">
-        <div className="w-full">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            ఆలోచనా ప్రవాహాలు
-          </h2>
-          <div className="text-lg text-gray-700 w-full mb-12 text-center">
-            ప్రతి ఆలోచనా ధోరణి మన అవగాహనను విస్తృతం చేస్తుంది. వివిధ కోణాల నుండి
-            విషయాలను అర్థం చేసుకోవడం ద్వారా మన దృక్పథం సమగ్రమవుతుంది.
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {thoughts.map((thought, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-neutral-900 p-6 rounded-lg shadow-sm hover:shadow-md transition-all"
-            >
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-2">
-                  {thought.icon}
-                  <h3 className="text-xl font-semibold">{thought.title}</h3>
-                </div>
-                <ul className="list-disc space-y-2 text-left pl-4">
-                  {thought.thoughts.map((item, itemIndex) => (
-                    <li
-                      key={itemIndex}
-                      className="text-gray-600 dark:text-gray-400 text-left"
-                    >
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="p-10 bg-gray-100">
-        <div className="w-full">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            సాహిత్య ప్రేరణ
-          </h2>
-          <div className="text-lg text-gray-700 w-full mb-12 text-center">
-            రచన అనేది మన మనసు నుండి ప్రవహించే భావధార. అక్షరాల ద్వారా మన
-            అనుభూతులు అనంతకాలం జీవించగలవు. ప్రతి పదం వెనుక ఒక కథ, ప్రతి వాక్యం
-            వెనుక ఒక అనుభవం దాగి ఉంటుంది.
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {motivation.map((item, index) => (
-            <div
-              key={index}
-              className="bg-white dark:bg-neutral-900 p-6 rounded-lg shadow-sm hover:shadow-md transition-all border border-gray-200 dark:border-gray-800"
-            >
-              <div className="flex flex-col gap-4">
-                <div className="flex items-center gap-2">
-                  {item.icon}
-                  <h3 className="text-xl font-semibold">{item.title}</h3>
-                </div>
-                <blockquote className="border-l-4 border-gray-200 dark:border-gray-700 pl-4 italic">
-                  <p className="text-gray-600 dark:text-gray-400 mb-2">
-                    {item.quote}
-                  </p>
-                  <footer className="text-sm text-gray-500 dark:text-gray-500">
-                    — {item.author}
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
+    <div className="min-h-[86.5vh] flex flex-col justify-center items-center text-center bg-gradient-to-br from-blue-50 to-purple-50 font-sans">
+      <HeroSection />
+      <FeaturesSection />
+      <ThoughtsSection />
+      <MotivationSection />
     </div>
   )
 }

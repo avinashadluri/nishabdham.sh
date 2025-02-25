@@ -8,7 +8,7 @@ import { SheetLeft } from "@/components/navigation/sidebar"
 
 export function Navbar() {
   return (
-    <nav className="sticky top-0 z-50 w-full h-16 border-b bg-background md:px-4 px-2">
+    <nav className="sticky top-0 z-50 w-full h-16 border-b bg-gradient-to-br from-blue-50 to-purple-50 md:px-4 px-2">
       <div className="mx-auto flex h-full items-center justify-between p-1 sm:p-3 md:gap-2">
         <div className="flex items-center gap-5">
           <SheetLeft />
