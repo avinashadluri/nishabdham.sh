@@ -27,6 +27,10 @@ export const Documents: Paths[] = [
         title: "నిశ్శబ్ద ప్రతీకారం",
         href: "/revenge",
       },
+      {
+        title: "భవిష్యత్తులో",
+        href: "/bhavishyathu",
+      },
     ],
   },
   {
