@@ -15,7 +15,18 @@ export function Footer() {
           </Link>
           .
         </p>
-        <div className="flex items-center gap-4">
+        <small>
+          మీ అభిప్రాయాలు తెలియజేయడానికి లేదా ఫీడ్‌బ్యాక్ ఇవ్వడానికి
+          <Link
+            href="/comments"
+            className="mx-1 underline hover:text-foreground transition-colors"
+          >
+            అభిప్రాయాల పేజీ
+          </Link>
+          కి వెళ్లండి.
+        </small>
+
+        <div className="flex items-center gap-4 py-4">
           <Link
             href="mailto:nishabdham.sh@gmail.com"
             target="_blank"
