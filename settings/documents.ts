@@ -28,8 +28,8 @@ export const Documents: Paths[] = [
         href: "/revenge",
       },
       {
-        title: "భవిష్యత్తులో",
-        href: "/bhavishyathu",
+        title: "2425",
+        href: "/2425",
       },
     ],
   },
