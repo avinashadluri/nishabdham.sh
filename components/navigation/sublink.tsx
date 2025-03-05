@@ -43,7 +43,10 @@ export default function SubLink(
   const { title, href, items, noLink, level, isSheet } = props
 
   const Comp = (
-    <Anchor activeClassName="text-primary text-sm font-medium font-bold" href={href}>
+    <Anchor
+      activeClassName="text-primary text-lg font-medium font-bold"
+      href={href}
+    >
       {title}
     </Anchor>
   )
@@ -59,13 +62,13 @@ export default function SubLink(
   )
 
   if (!items) {
-    return <div className="flex flex-col text-sm">{titleOrLink}</div>
+    return <div className="flex flex-col text-lg">{titleOrLink}</div>
   }
 
   return (
     <div className="flex flex-col w-full gap-1">
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-        <div className="flex items-center gap-2 text-sm mr-3">
+        <div className="flex items-center gap-2 text-lg mr-3">
           {titleOrLink}
           <CollapsibleTrigger asChild>
             <Button className="ml-auto h-6 w-6" variant="link" size="icon">

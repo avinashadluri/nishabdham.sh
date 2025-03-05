@@ -29,10 +29,10 @@ export default async function Pages({ params }: PageProps) {
         <PageBreadcrumb paths={slug} />
         <Typography>
           <h1 className="text-3xl -mt-2">{frontmatter.title}</h1>
-          <p className="-mt-4 text-base text-muted-foreground text-[16.5px]">
+          <p className="-mt-2 text-base text-muted-foreground text-[16.5px]">
             {frontmatter.description}
           </p>
-          <div>{content}</div>
+          <div className="text-xl leading-relaxed">{content}</div>
           <Pagination pathname={pathName} />
         </Typography>
       </div>
