@@ -13,6 +13,10 @@ export const Documents: Paths[] = [
         title: "ఆలోచించండి",
         href: "/alochinchandi",
       },
+      {
+        title: "ఆర్థిక సంకల్పం",
+        href: "/aarthika-sankalpam",
+      },
     ],
   },
   {
