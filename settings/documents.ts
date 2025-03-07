@@ -54,8 +54,8 @@ export const Documents: Paths[] = [
         href: "/mahesh",
       },
       {
-        title: "విజయం",
-        href: "/vijayam",
+        title: "రవి",
+        href: "/రవి",
       },
       {
         title: "సత్యం",
