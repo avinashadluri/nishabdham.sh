@@ -242,7 +242,7 @@ const HeroSection = () => {
           className="rounded-full mb-2 glow-[#FFD700]"
           priority
         />
-        <span className="text-gray-800 -mt-12 bg-clip-text py-[2px] leading-relaxed">
+        <span className="text-transparent -mt-12 bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 py-[2px] leading-relaxed">
           నా ఆలోచనల ప్రపంచం
         </span>
       </h1>
@@ -274,7 +274,7 @@ const FeaturesSection = () => {
   return (
     <section className="p-10">
       <div className="w-full">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 py-[2px] leading-relaxed">
           నా రచనల ప్రపంచం
         </h2>
         <div className="text-lg text-gray-700 w-full mb-12 text-center">
@@ -310,7 +310,7 @@ const ThoughtsSection = () => {
   return (
     <section className="p-10">
       <div className="w-full">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 py-[2px] leading-relaxed">
           ఆలోచనా ప్రవాహాలు
         </h2>
         <div className="text-lg text-gray-700 w-full mb-12 text-center">
@@ -352,7 +352,7 @@ const MotivationSection = () => {
   return (
     <section className="p-10">
       <div className="w-full">
-        <h2 className="text-3xl font-bold text-center mb-12 text-gray-800">
+        <h2 className="text-4xl font-bold text-center mb-12 text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-amber-700 py-[2px] leading-relaxed">
           సాహిత్య ప్రేరణ
         </h2>
         <div className="text-lg text-gray-700 w-full mb-12 text-center">

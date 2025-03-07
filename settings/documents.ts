@@ -38,6 +38,32 @@ export const Documents: Paths[] = [
     ],
   },
   {
+    title: "ప్రేరణ",
+    href: "/prerana",
+    items: [
+      {
+        title: "పద్మజ",
+        href: "/padmaja",
+      },
+      {
+        title: "రాజేష్",
+        href: "/rajesh",
+      },
+      {
+        title: "మహేష్",
+        href: "/mahesh",
+      },
+      {
+        title: "విజయం",
+        href: "/vijayam",
+      },
+      {
+        title: "సత్యం",
+        href: "/satyam",
+      },
+    ],
+  },
+  {
     title: "కవితలు",
     href: "/kavitalu",
     items: [
@@ -56,28 +82,6 @@ export const Documents: Paths[] = [
       {
         title: "స్వార్థ పద్యాలు",
         href: "/swaartham",
-      },
-    ],
-  },
-  {
-    title: "ప్రేరణ",
-    href: "/prerana",
-    items: [
-      {
-        title: "నువ్వు",
-        href: "/nuvvu",
-      },
-      {
-        title: "ద్వేషం",
-        href: "/dwesham",
-      },
-      {
-        title: "విజయం",
-        href: "/vijayam",
-      },
-      {
-        title: "సత్యం",
-        href: "/satyam",
       },
     ],
   },

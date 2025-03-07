@@ -1,4 +1,4 @@
-import { LuAlignLeft } from "react-icons/lu"
+import { LuAlignJustify } from "react-icons/lu"
 
 import { Button } from "@/components/ui/button"
 import { DialogTitle } from "@/components/ui/dialog"
@@ -29,10 +29,13 @@ export function SheetLeft() {
     <Sheet>
       <SheetTrigger asChild>
         <Button variant="ghost" size="icon" className="md:hidden flex">
-          <LuAlignLeft className="!size-6" />
+          <LuAlignJustify className="!size-6 text-white" />
         </Button>
       </SheetTrigger>
-      <SheetContent className="flex flex-col gap-4 px-0" side="left">
+      <SheetContent
+        className="flex flex-col gap-4 px-0 text-white bg-gradient-to-br from-gray-950 to-gray-800"
+        side="left"
+      >
         <DialogTitle className="sr-only">Menu</DialogTitle>
         <SheetHeader>
           <SheetClose className="px-5" asChild>

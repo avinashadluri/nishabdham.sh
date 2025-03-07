@@ -23,7 +23,7 @@ export default function SubLink(
   props: Paths & { level: number; isSheet: boolean }
 ) {
   const path = usePathname()
-  const [isOpen, setIsOpen] = useState(true)
+  const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
     if (
@@ -44,7 +44,7 @@ export default function SubLink(
 
   const Comp = (
     <Anchor
-      activeClassName="text-primary text-lg font-medium font-bold"
+      activeClassName="bg-gradient-to-r from-yellow-500 to-amber-700 text-transparent bg-clip-text font-medium font-bold"
       href={href}
     >
       {title}
@@ -73,9 +73,9 @@ export default function SubLink(
           <CollapsibleTrigger asChild>
             <Button className="ml-auto h-6 w-6" variant="link" size="icon">
               {!isOpen ? (
-                <LuChevronRight className="h-[0.9rem] w-[0.9rem]" />
+                <LuChevronRight className="h-[0.9rem] w-[0.9rem] text-yellow-500" />
               ) : (
-                <LuChevronDown className="h-[0.9rem] w-[0.9rem]" />
+                <LuChevronDown className="h-[0.9rem] w-[0.9rem] text-amber-600" />
               )}
               <span className="sr-only">Toggle</span>
             </Button>
@@ -84,7 +84,7 @@ export default function SubLink(
         <CollapsibleContent className="CollapsibleContent">
           <div
             className={cn(
-              "mt-2.5 flex flex-col items-start gap-3 pl-4 text-sm border-l text-neutral-800 dark:text-neutral-300/85",
+              "mt-2.5 flex flex-col items-start gap-3 pl-4 text-sm border-l text-white md:text-neutral-800 dark:text-neutral-300/85",
               level > 0 && "ml-1 pl-4 border-l"
             )}
           >

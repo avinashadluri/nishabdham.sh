@@ -13,8 +13,11 @@ export function Logo() {
         height={34}
         loading="lazy"
         decoding="async"
+        className="invert"
       />
-      <h1 className="text-lg font-semibold -ml-6">{Settings.title}</h1>
+      <h1 className="text-lg font-semibold -ml-6 text-white">
+        {Settings.title}
+      </h1>
     </Link>
   )
 }

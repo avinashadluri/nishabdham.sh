@@ -10,7 +10,7 @@ export default function PageMenu({ isSheet = false }) {
   if (!pathname.startsWith("/docs")) return null
 
   return (
-    <div className="flex flex-col gap-3.5 mt-5 pb-6">
+    <div className="flex flex-col gap-3.5 mt-5 pb-6 text-white md:text-black">
       {Routes.map((item, index) => {
         if ("spacer" in item) {
           return (
@@ -30,6 +30,8 @@ export default function PageMenu({ isSheet = false }) {
                 href: `/docs${item.href}`,
                 level: 0,
                 isSheet,
+                activeClassName:
+                  "bg-gradient-to-r from-yellow-500 to-amber-700 text-white font-medium",
               }}
             />
           </div>
