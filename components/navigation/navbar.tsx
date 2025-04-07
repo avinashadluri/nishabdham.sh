@@ -35,9 +35,9 @@ export function NavMenu({ isSheet = false }) {
         const Comp = (
           <Anchor
             key={item.title + item.href}
-            activeClassName="font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-600 to-yellow-400"
+            activeClassName="font-bold text-white bg-gradient-to-r from-yellow-600 to-yellow-400 w-full px-2 py-1 rounded"
             absolute
-            className="flex items-center gap-1 text-sm text-white"
+            className="flex items-center gap-1 text-lg text-white"
             href={item.href}
             target={item.external ? "_blank" : undefined}
             rel={item.external ? "noopener noreferrer" : undefined}
