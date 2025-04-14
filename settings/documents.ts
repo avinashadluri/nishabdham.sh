@@ -83,6 +83,10 @@ export const Documents: Paths[] = [
         title: "స్వార్థ పద్యాలు",
         href: "/swaartham",
       },
+      {
+        title: "ప్రసవం",
+        href: "/prasavam",
+      },
     ],
   },
   {
